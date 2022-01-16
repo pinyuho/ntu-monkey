@@ -60,7 +60,6 @@ export default function List(){
           "limit":8,
           "offset":(page-1)*8
          }});
-         console.log("my applicant data: ", data)
 
       }else if(taskState === 4){
         data
@@ -82,13 +81,9 @@ export default function List(){
           "offset":(page-1)*8
         }});
       }
-      console.log("datatotalCnt", data.data.totalCnt)
       setTotalCnt((Math.floor(data.data.totalCnt/8 )+ 1))
-      console.log("totalCnt", Math.floor(data.data.totalCnt/8) + 1)
       data = data.data
-      console.log("data", data)
       setTaskList(data.task)
-      console.log("data", data)
     }, [taskState,page])
 
     React.useEffect(async() => {
@@ -177,7 +172,6 @@ return(
               style={{color:color[1]}}
               page={page}
               onChange={(_, page) => {
-                console.log(page); 
                 if(page!== null){
                   setPage(page)
                 }}}

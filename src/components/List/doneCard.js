@@ -41,7 +41,6 @@ export default function TaskCard(prop) {
         authToken
       });
       changeTask(5)
-      console.log("done", message)
       enqueueSnackbar(message, {variant:"success"})
   }
 

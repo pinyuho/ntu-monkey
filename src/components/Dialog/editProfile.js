@@ -43,7 +43,6 @@ export default function CreateTaskModel() {
 
   const EditTask = async() => {
     getProfile(profile,account)
-    console.log("Edit: ",department,socialLink, description)
     const {
         data: { success, message },
       } = await axios.post(`/account/profile`, {
@@ -52,7 +51,6 @@ export default function CreateTaskModel() {
         "social_account":socialLink,
         description
       });
-      console.log("editttt", message)
      enqueueSnackbar("編輯成功", {variant:"success"})
      changeTask(2)
      handleClose()

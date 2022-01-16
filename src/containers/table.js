@@ -17,7 +17,6 @@ export default function List(){
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const select = async(id) => {
-      console.log("id", taskDetail._id,id)
       const {
         data: { success },
       } = await axios.post(`/task/${taskDetail._id}/applicant/${id}`);

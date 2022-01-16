@@ -54,7 +54,6 @@ export default function TaskDetail(prop) {
     if(applicants.length === 0){
       enqueueSnackbar(message, {variant:"info"})
     }else{
-      console.log("app", applicants)
       changeState("table") ;
       handleClose();
     }

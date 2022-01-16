@@ -10,7 +10,6 @@ const router = express.Router()
 router.post('/:taskId/applicant', async (req, res) => {
     const account = await Account.findOne({ _id: authToken(req.body.authToken)._id })
     const task = await Task.findOne({ _id: req.params.taskId })
-    console.log(account)
 
     const filter = {
         task_id: req.params.taskId,
@@ -50,7 +49,6 @@ router.post('/:taskId/applicant', async (req, res) => {
 })
 
 router.post('/:taskId/done', async (req, res) => {
-    console.log("applicant_id: ", authToken(req.body.authToken)._id)
 
     await TaskApplicant.updateOne(
         { task_id: req.params.taskId, applicant_id: authToken(req.body.authToken)._id }, 
@@ -67,7 +65,7 @@ router.post('/:taskId/done', async (req, res) => {
 
 router.post('/:taskId/applicant/:applicantId', async (req, res) => {
     const account = await Account.findOne({ _id: req.params.applicantId })
-    console.log("account: ", account)
+
     await TaskApplicant.updateMany(
         { task_id: req.params.taskId }, 
         { status: 'REJECTED'}

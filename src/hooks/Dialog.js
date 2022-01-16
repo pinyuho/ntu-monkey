@@ -64,11 +64,9 @@ const DialogProvider = (props) => {
     } 
 
     const changeUserName = (name) => {
-        console.log("name", name)
         setUsername(name)
     }
     const getTasks = async(type) => {
-        console.log("geet", type)
         const {
             data
         } =  await axios.get('/task/', {
@@ -76,8 +74,6 @@ const DialogProvider = (props) => {
                 type
             }
           })
-        console.log("data", data)
-      //  setTasks(data)
     }
 
     const getProfile = (profile, account) => {
@@ -86,27 +82,22 @@ const DialogProvider = (props) => {
     } 
 
     const changeTask = (newState) => {
-      console.log("Taskstate", newState)
       changeState("main")
       setTaskState(newState)
    
     }
 
     const changeState = (newState) => {
-        console.log("state", newState)
         setState(newState)
     }
     
   const changeShowCreateTask = () => {
-    console.log("changeShowCreateTask", showCreateTask)
     setshowCreateTask(!showCreateTask)
   }
   const changeShowEditTask = () => {
-    console.log("changeShowEditTask", showEditTask)
     setshowEditTask(!showEditTask)
   }
   const changeShowTaskDetail = (ID) => {
-      console.log("changeShowTaskDetail", !showTaskDetail)
       setShowTaskDetail(!showTaskDetail)
       setTaskID(ID)
   }

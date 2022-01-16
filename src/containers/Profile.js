@@ -36,7 +36,6 @@ const Profile = () => {
           authToken
         }});
       }
-      console.log("data", data.data.profile)
       setProfile(data.data.profile)
       setAccount(data.data.account)
     }, [state])

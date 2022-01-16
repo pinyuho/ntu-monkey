@@ -55,7 +55,6 @@ export default function CreateTaskModel(prop) {
   }}, [showEditTask])
 
 const EditTask = () => {
-   console.log("Edit: ",title,reward, location)
 
     axios.patch(`/task/${taskDetail._id}`, {
     title,
